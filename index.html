@@ -9,21 +9,30 @@
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
-        <header>
-            <div class="container">
-                <img src="assets/img/logo.png" alt="logo" />
-            </div>
-        </header>
-
-        <div id="appCd" class="cds-container container">
-            <!-- Disco ad esempio -->
-            <div class="cd" v-for="album in listaDischi">
-                <img :src="album.poster" alt="">
-                <h3>{{album.title}}</h3>
-                <span class="author">{{album.author}}</span>
-                <span class="year">{{album.year}}</span>
+        <div id="appCd" class="app_wrap">
+            <header>
+                <div class="container">
+                    <img src="assets/img/logo.png" alt="logo" />
+                    <!-- <label for="genere">Seleziona il tuo genere:</label>
+                    <select name="geenre" id="genere"  v-model="key">
+                        <option value="all">All</option>
+                        <option v-for="album in genere" v-bind:value="album">
+                            {{album.genre}}</option>
+                    </select> -->
+                </div>
+            </header>
+    
+            <div class="cds-container container">
+                <!-- Disco ad esempio -->
+                <div class="cd" v-for="album in listaDischi" v-if="">
+                    <img :src="album.poster" alt="">
+                    <h3>{{album.title}}</h3>
+                    <span class="author">{{album.author}}</span>
+                    <span class="year">{{album.year}}</span>
+                </div>
             </div>
         </div>
+        <!-- /.app_wrap -->
 
         <!-- development version, includes helpful console warnings -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
